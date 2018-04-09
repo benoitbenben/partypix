@@ -10,4 +10,7 @@ class Room < ApplicationRecord
 
   # through pictures pour le nombre de comments
   has_many :comments, through: :pictures
+
+  # through pictures pour le nombre de votes
+  has_many :upvote, through: :pictures
 end
