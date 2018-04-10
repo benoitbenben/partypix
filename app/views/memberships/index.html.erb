@@ -1,0 +1,13 @@
+<h1>You can add contributors to your room</h1>
+
+
+<%= form_tag costumes_path, class: "search-bar-navbar", method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a costume"
+    %>
+  <% end %>
+
+
+<%= link_to "Invite" %>
