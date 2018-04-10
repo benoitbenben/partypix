@@ -5,12 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :memberships
-  # tester cette ligne
+  # TODO :tester cette ligne
   has_many :created_rooms, class_name: 'Room'
   has_many :joined_rooms, through: :memberships, source: :room
   has_many :pictures
   has_many :comments
   has_many :upvotes
+
+  #uploader
+  mount_uploader :avatar, PhotoUploader
 
 
   def all_rooms
