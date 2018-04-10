@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   # par defaut homepage = connection
-  root to: 'rooms#index'
+  root to: 'pages#home'
+  #TODO A REMETTRE PLUS TARD
+  # root to: 'rooms#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
