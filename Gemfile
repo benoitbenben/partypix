@@ -10,7 +10,8 @@ gem 'rails', '5.1.5'
 gem 'redis'
 
 #own gems
-gem 'cloudinary'
+gem 'cloudinary' #base photo
+gem 'carrierwave', '~> 1.2' #uploader for photos
 
 
 gem 'autoprefixer-rails'
