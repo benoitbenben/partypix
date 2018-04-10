@@ -1,0 +1,9 @@
+<h1>create your room NOW !</h1>
+
+<p>please add a nice tag</p>
+
+  <%= simple_form_for (@room) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :date %>
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  <% end %>
