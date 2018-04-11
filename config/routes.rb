@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations" }
   root to: 'rooms#index'
 
   # GET /rooms + GET rooms/id + GET rooms/new + POST rooms

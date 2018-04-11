@@ -3,13 +3,16 @@
 <h2>My Partypixer Profile</h2>
 upload avatar :
 <!-- Nous avons ici notre label et l'input afférent -->
-formulaire avec submit button
+<!-- formulaire avec submit button -->
+
 <label for="file" class="label-file">Choisir une image</label>
 <input id="file" class="input-file" type="file">
-
 
 <%= cl_image_tag @user.avatar, height: 150, width: 150, crop: :fill %>
 <p>Nickname : <%= @user.nickname %> </p>
 <p>First Name : <%= @user.first_name %></p>
 <p>Last Name : <%= @user.last_name %></p>
+
+
+
 
