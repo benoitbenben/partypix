@@ -16,8 +16,7 @@ class RoomsController < ApplicationController
     @room.user = current_user
 
     if @room.save
-      #TODO : penser à changer cette route quand la feature Inviter Contributeurs sera faite.
-      redirect_to room_path(@room)
+      redirect_to new_room_membership_path(@room)
     else
       render :new
     end
