@@ -12,6 +12,7 @@ gem 'redis'
 #own gems
 gem 'cloudinary' #base photo
 gem 'carrierwave', '~> 1.2' #uploader for photos
+gem 'jquery-rails'
 
 
 gem 'autoprefixer-rails'

@@ -7,6 +7,7 @@ class Room < ApplicationRecord
 
   # through membership table
   has_many :users, through: :memberships
+  # has_many :contributors, through: :memberships, source: :user
 
   # through pictures pour le nombre de comments
   has_many :comments, through: :pictures
@@ -14,3 +15,4 @@ class Room < ApplicationRecord
   # through pictures pour le nombre de votes
   has_many :upvotes, through: :pictures
 end
+
