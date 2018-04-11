@@ -4,4 +4,12 @@
 <br><br>
 <p>Room creator : <%= @room.user.email %></p>
 <p>Room name : <%= @room.name %></p>
-<p>Date of the Event <%= @room.date %> </p>
+<p>Date of the Event : <%= @room.date %> </p>
+<p>Contributors to the room :
+  <% @room.users.each do |user| %>
+    <ul>
+      <li><%= user.email %></li>
+    </ul>
+  <% end %>
+
+</p>

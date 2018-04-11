@@ -1,7 +1,7 @@
-<h1>Here you can select contributor amongst all users</h1>
+<h1>2/2 - Here you can select contributor amongst all users</h1>
 
 <%= form_tag room_memberships_path do %>
-  <%= select_tag "contributors[]", options_from_collection_for_select(@users, :id, :email), class: 'select2', multiple:"" %>
+  <%= select_tag "contributors_ids[]", options_from_collection_for_select(@users, :id, :email), class: 'select2', multiple:'' %>
   <%= submit_tag 'Add' %>
 <% end %>
 

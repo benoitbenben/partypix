@@ -8,17 +8,35 @@ class MembershipsController < ApplicationController
   end
 
   def create
-    @contributor = Membership.new(params[:contributor])
+
+    # Choper tous les ids soumis par le form de select2
+    # Choper la room à partir du room_id
+    # Pour chaque id des users, on veut:
+    #   Récuperer le user
+    #   Créer un membership entre ce user et room
+
+    # redirect_to room_path(room)
     @room = Room.find(params[:room_id])
 
-    @contributor.room = @room
-    @contributor.user = current_user
+    @contributors_ids = params[:contributors_ids]
 
-    if @contributor.save
-      redirect_to rooms_path
-    else
-      render :new
+    @contributors_ids.each do |contributor_id|
+      contributor = User.find(contributor_id)
+      Membership.create(user: contributor, room: @room)
     end
+
+    redirect_to room_path(@room)
+
+
+    # @contributors = []
+
+    # @contributors.each do |contributor|
+    #   contributor = Membership.new(params[:contributor])
+    #   @contributor = contributor
+    #   @room = Room.find(params[:room_id])
+    #   contributor.room = @room
+    # end
+
   end
 
   private

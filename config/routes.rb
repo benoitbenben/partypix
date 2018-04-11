@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
-  # root to: 'rooms#index'
+  root to: 'rooms#index'
 
   # GET /rooms + GET rooms/id + GET rooms/new + POST rooms
   resources :rooms, only: [:index, :show, :new, :create] do
