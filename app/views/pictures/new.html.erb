@@ -1,0 +1,6 @@
+<h1>Add your pictures!</h1>
+
+<%= simple_form_for [@room, @picture] do |f| %>
+  <%= f.input :photo, multiple: true %>
+  <%= f.submit 'Add' %>
+<% end %>
