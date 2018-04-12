@@ -1,0 +1,39 @@
+h1 {
+  color: $dark-gray;
+  font-size: 6vw;
+  display: block;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: $dark-gray;
+  font-size: 5.0vw;
+  display: block;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 0px rgba(242, 242, 242, 0.7);
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: $light-gray;
+  font-size: 3vmin;
+  display: block;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: none;
+  font-style: normal;
+  text-transform: uppercase;
+}
