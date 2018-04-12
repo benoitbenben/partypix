@@ -1,7 +1,7 @@
 .btn-major {
   width: 240px;
   height: 60px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
   border: 15px, $blue;
   background-color: $dark-gray;
   border-radius: 30px;
@@ -16,9 +16,9 @@
     height: 60px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border: 15px, $yellow;
-    background-color: rgba(white,0.3);
+    background-color: $blue;
     border-radius: 30px;
-    color: $yellow;
+    color: $dark-gray;
     text-shadow: 0px 2px rgba(0,0,0,0.15);
     font-size: 24;
     font-style: none;
@@ -37,7 +37,7 @@
 .btn-minor {
   width: 240px;
   height: 60px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.5);
   border: 15px, $yellow;
   background-color: rgba(white,0.3);
   border-radius: 30px;
@@ -52,9 +52,9 @@
     height: 60px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.07);
     border: 15px, $yellow;
-    background-color: rgba(white,0.3);
+    background-color: $yellow;
     border-radius: 30px;
-    color: $yellow;
+    color: white;
     text-shadow: 0px 2px rgba(0,0,0,0.15);
     font-size: 24;
     font-style: none;
