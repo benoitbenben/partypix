@@ -1,6 +1,7 @@
-.img-size {
+.img-responsive {
+  max-width: 100%;
   height: auto;
-  width: auto;
-  min-width: 400px;
-  min-height: 400px;
+  display: block;
 }
+
+
