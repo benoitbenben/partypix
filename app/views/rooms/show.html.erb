@@ -16,19 +16,39 @@
     <% end %>
   </div>
 
-  <br>
-  <p>Room creator : <%= @room.user.email %></p>
-  <p>Room name : <%= @room.name %></p>
 
-  <p>Contributors to the room :
-    <% @room.users.each do |user| %>
-      <ul>
-        <li><%= user.email %></li>
-      </ul>
-    <% end %>
+    <p>Room creator : <%= @room.user.email %></p>
+    <p>Room name : <%= @room.name %></p>
 
-  </p>
-
+    <p>Contributors to the room :
+      <% @room.users.each do |user| %>
+        <ul>
+          <li><%= user.email %></li>
+        </ul>
+      <% end %>
+    </p>
+# TODO border ?
+  <h1>Welcome to <%= @room.name %> </h1>
   <p><strong>ready to upload some pix ?</strong></p>
   <%= link_to "upload my pictures", new_room_picture_path(@room) %>
+  <br>
+  <p>Your pictures :</p>
+  <ul>
+    <% @room.pictures.each do |picture| %>
+      <% unless picture.photo.nil? %>
+        <li><%= link_to cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill), picture_path %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <br>
+    <p>Room creator : <%= cl_image_tag(@room.user.avatar) %> <%= @room.user.nickname %></p>
+    <p>Room name : <%= @room.name %></p>
+    <p>Date of the Event : <%= @room.date %> </p>
+    <p>Contributors to the room :
+      <% @room.users.each do |user| %>
+        <ul>
+          <li><%= cl_image_tag(user.avatar) %> <%= user.nickname %></li>
+        </ul>
+      <% end %>
+
 </div>
