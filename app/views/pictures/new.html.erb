@@ -1,0 +1,7 @@
+<h1>Add your pictures!</h1>
+
+<%= simple_form_for [@room, @picture] do |f| %>
+  <%= f.input :photo, label: "Add your pictures!", input_html: {multiple: true, name: "photos[]"} %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit 'Add' %>
+<% end %>

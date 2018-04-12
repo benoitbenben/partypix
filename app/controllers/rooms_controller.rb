@@ -5,6 +5,7 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @pictures = @room.pictures.all
   end
 
   def new
@@ -17,6 +18,7 @@ class RoomsController < ApplicationController
 
     if @room.save
       redirect_to new_room_membership_path(@room)
+
     else
       render :new
     end

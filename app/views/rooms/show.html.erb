@@ -1,7 +1,16 @@
-<h1>this is my room</h1>
+<h1>Welcome to <%= @room.name %> </h1>
 <p><strong>ready to upload some pix ?</strong></p>
-# TODO : link-to upload pic from mobile
-<br><br>
+<%= link_to "upload my pictures", new_room_picture_path(@room) %>
+<br>
+<p>Your pictures :</p>
+<ul>
+  <% @room.pictures.each do |picture| %>
+    <% unless picture.photo.nil? %>
+      <li><%= cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill) %></li>
+    <% end %>
+  <% end %>
+</ul>
+<br>
 <p>Room creator : <%= @room.user.email %></p>
 <p>Room name : <%= @room.name %></p>
 <p>Date of the Event : <%= @room.date %> </p>
