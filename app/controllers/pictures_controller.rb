@@ -1,4 +1,12 @@
 class PicturesController < ApplicationController
+  def show
+    @picture = Picture.find(params[:id])
+    @comment = Comment.new
+
+    @upvote = Upvote.new
+
+    @upvotes = @picture.upvotes.all
+  end
 
   def new
     set_room
@@ -28,4 +36,5 @@ class PicturesController < ApplicationController
   def picture_params
     params.require(:picture).permit(:photo)
   end
+
 end

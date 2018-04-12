@@ -1,0 +1,29 @@
+<h1>This is this picture</h1>
+
+<p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
+
+<% if @picture.upvotes.find_by(user: current_user).nil? %>
+  <p><%= link_to "Add-Vote", picture_upvote_path(@picture), method: :post %></p>
+<% elsif @picture.upvotes.find_by(user: current_user) %>
+    <p><%= link_to "Remove-Vote", picture_upvote_path(@picture), method: :delete %></p>
+<% end %>
+
+<p>Total votes: <%= @upvotes.count %></p>
+
+<p>Author: <%= @picture.user.nickname %></p>
+
+<% if @picture.comments.empty? %>
+  <p>There are no comments yet. Feel free to add one ;)</p>
+
+<% else %>
+  <p>All the pic's comments:</p>
+  <% @picture.comments.each do |comment| %>
+    <p>Author: <%= comment.user.nickname %> ; Date: <%= comment.date %></p>
+    <p>Content: <%= comment.content %></p>
+  <% end %>
+<% end %>
+
+<%= simple_form_for [@picture, @comment] do |f| %>
+  <%= f.input :content, label: "Add a comment..." %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
