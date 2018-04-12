@@ -1,0 +1,6 @@
+<h1>This is this picture</h1>
+
+<p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
+
+<p>Author: <%= @picture.user.nickname %></p>
+
