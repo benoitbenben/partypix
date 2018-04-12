@@ -3,7 +3,6 @@ class Room < ApplicationRecord
 
   # direct
   has_many :pictures
-  accepts_nested_attributes_for :pictures
 
   has_many :memberships
 

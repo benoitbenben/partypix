@@ -1,11 +1,13 @@
-<h1>this is my room</h1>
+<h1>Welcome to <%= @room.name %> </h1>
 <p><strong>ready to upload some pix ?</strong></p>
 <%= link_to "upload my pictures", new_room_picture_path(@room) %>
 <br>
 <p>Your pictures :</p>
 <ul>
-  <% @pictures.each do |picture| %>
-    <li><%= cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill) %></li>
+  <% @room.pictures.each do |picture| %>
+    <% unless picture.photo.nil? %>
+      <li><%= cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill) %></li>
+    <% end %>
   <% end %>
 </ul>
 <br>

@@ -10,7 +10,6 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
-    @picture = @room.picture.build
   end
 
   def create
@@ -18,10 +17,6 @@ class RoomsController < ApplicationController
     @room.user = current_user
 
     if @room.save
-      params[:photos].each do |photo|
-        @picture = @room.pictures.create(photo: photo)
-      end
-
       redirect_to new_room_membership_path(@room)
 
     else
@@ -32,6 +27,6 @@ class RoomsController < ApplicationController
   private
 
   def room_params
-    params.require(:room).permit(:name, :date, photo_attributes: [:id, :room_id, :photo])
+    params.require(:room).permit(:name, :date)
   end
 end

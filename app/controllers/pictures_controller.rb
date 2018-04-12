@@ -1,21 +1,21 @@
 class PicturesController < ApplicationController
-  before_action :set_room, only: [:new, :create]
 
   def new
+    set_room
     @picture = Picture.new
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    set_room
 
-    @picture.room = @room
-    @picture.user = current_user
-
-    if @picture.save
-      redirect_to room_path(@room)
-    else
-      render :new
+    # On prend en compte l'upload de plusieurs photos simultanément
+    photos = params[:photos]
+    photos.each do |photo|
+      @picture = Picture.new(room: @room, photo: photo)
+      @picture.user = current_user
+      @picture.save
     end
+    redirect_to room_path(@room)
   end
 
 
