@@ -2,8 +2,8 @@
 
 <p> Do not forget to upload avatar : </p>
 
-<p> <%= cl_image_tag(@user.avatar, height: 100, width: 100, class: 'img-circle', crop: :fill) %>
-My Partypixer Avatar</p>
+<p> <%= cl_image_tag(@user.avatar, class: 'avatar') %>
+  My Partypixer Avatar</p>
 <p>Nickname : <%= @user.nickname %> </p>
 <p>First Name : <%= @user.first_name %></p>
 <p>Last Name : <%= @user.last_name %></p>

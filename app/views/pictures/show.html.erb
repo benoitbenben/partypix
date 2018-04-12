@@ -1,0 +1,21 @@
+<h1>This is this picture</h1>
+
+<p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
+
+<p>Author: <%= @picture.user.nickname %></p>
+
+<% if @picture.comments.empty? %>
+  <p>There are no comments yet. Feel free to add one ;)</p>
+
+<% else %>
+  <p>All the pic's comments:</p>
+  <% @picture.comments.each do |comment| %>
+    <p>Author: <%= comment.user.nickname %> ; Date: <%= comment.date %></p>
+    <p>Content: <%= comment.content %></p>
+  <% end %>
+<% end %>
+
+<%= simple_form_for [@picture, @comment] do |f| %>
+  <%= f.input :content, label: "Add a comment..." %>
+  <%= f.submit "Add", class: "btn btn-primary" %>
+<% end %>
