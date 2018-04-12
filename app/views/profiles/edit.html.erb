@@ -1,0 +1,9 @@
+
+ <%= simple_form_for (@profile), url: profile_path do |f| %>
+    <%= f.input :nickname %>
+    <%= f.input :avatar %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.submit "Validate my change" %>
+  <% end %>
