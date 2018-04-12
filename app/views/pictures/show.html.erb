@@ -2,6 +2,14 @@
 
 <p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
 
+<% if @picture.upvotes.find_by(user: current_user).nil? %>
+  <p><%= link_to "Add-Vote", picture_upvote_path(@picture), method: :post %></p>
+<% elsif @picture.upvotes.find_by(user: current_user) %>
+    <p><%= link_to "Remove-Vote", picture_upvote_path(@picture), method: :delete %></p>
+<% end %>
+
+<p>Total votes: <%= @upvotes.count %></p>
+
 <p>Author: <%= @picture.user.nickname %></p>
 
 <% if @picture.comments.empty? %>
