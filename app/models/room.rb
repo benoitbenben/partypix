@@ -3,6 +3,7 @@ class Room < ApplicationRecord
 
   # direct
   has_many :pictures
+
   has_many :memberships
 
   # through membership table
