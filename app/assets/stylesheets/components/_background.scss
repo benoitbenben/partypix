@@ -1,4 +1,5 @@
-.background_rainbow {
+.background-rainbow {
   background: linear-gradient($yellow, $blue);
   background: cover;
+  min-height: 100vh;
 }
