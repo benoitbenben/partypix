@@ -7,6 +7,8 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
 
     @pictures = @room.pictures.all
+
+    top10_pictures
   end
 
   def new
@@ -30,4 +32,24 @@ class RoomsController < ApplicationController
   def room_params
     params.require(:room).permit(:name, :date)
   end
+
+  def top10_pictures
+    @top10_pictures = @pictures.left_outer_joins(:upvotes).
+      select("pictures.*, count(upvotes.id) AS upvotes_count").
+      group("pictures.id").
+      order("upvotes_count DESC").
+      limit(10)
+
+
+
+
+    # @pictures.each do |picture|
+    #   @upvotes = picture.upvotes
+    #   @picture = picture
+    # end
+
+    # ordered_upvotes = @upvotes.order(upvotes: :desc)
+    # @top10_upvotes = ordered_upvotes.first(10)
+  end
+
 end

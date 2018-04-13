@@ -2,6 +2,16 @@
 <p><strong>ready to upload some pix ?</strong></p>
 <%= link_to "upload my pictures", new_room_picture_path(@room) %>
 <br>
+
+<p>Top10 pictures of this room:</p>
+
+<ul>
+  <% @top10_pictures.each do |picture| %>
+    <li><%= cl_image_tag(picture.photo, width:150, height: 150) %></li>
+    <p><%= picture.upvotes_count %></p>
+  <% end %>
+</ul>
+
 <p>Your pictures :</p>
 <ul>
   <% @room.pictures.each do |picture| %>
