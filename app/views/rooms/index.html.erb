@@ -7,11 +7,9 @@
     <% end %>
   </ul>
 
-    <div class="footer-links">
-      <%= link_to " Create a new room", new_room_path, class: 'fa fa-plus' %>
-      <i class="fa fa-heart"></i>
-    </div>
-
+  <%= link_to "Create a new room", new_room_path, class: "footer-links" do %>
+    <%= image_tag "rounded-add-button.png", height: 35 %>
+  <% end %>
 </div>
 
 
