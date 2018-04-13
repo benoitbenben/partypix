@@ -21,7 +21,7 @@
   <ul>
     <% @room.pictures.each do |picture| %>
       <% unless picture.photo.nil? %>
-        <li><%= link_to cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill), picture_path %></li>
+        <li><%= link_to cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill), picture_path(picture) %></li>
       <% end %>
     <% end %>
   </ul>
