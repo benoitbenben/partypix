@@ -4,6 +4,38 @@
     <h3><%= @room.date %> </h3>
   </div>
 
+  <p><strong>ready to upload some pix ?</strong></p>
+  <%= link_to "upload my pictures", new_room_picture_path(@room) %>
+  <br>
+
+  <p>Top10 pictures of this room:</p>
+
+  <ul>
+    <% @top10_pictures.each do |picture| %>
+      <li><%= cl_image_tag(picture.photo, width:150, height: 150) %></li>
+      <p><%= picture.upvotes_count %></p>
+    <% end %>
+  </ul>
+
+  <p>Your pictures :</p>
+  <ul>
+    <% @room.pictures.each do |picture| %>
+      <% unless picture.photo.nil? %>
+        <li><%= link_to cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill), picture_path %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <br>
+  <p>Room creator : <%= cl_image_tag(@room.user.avatar) %> <%= @room.user.nickname %></p>
+  <p>Room name : <%= @room.name %></p>
+  <p>Date of the Event : <%= @room.date %> </p>
+  <p>Contributors to the room :
+    <% @room.users.each do |user| %>
+      <ul>
+        <li><%= cl_image_tag(user.avatar) %> <%= user.nickname %></li>
+      </ul>
+    <% end %>
+
   <br>
 
     <div class="col-xs-6 col-sm-4 col-md-3">

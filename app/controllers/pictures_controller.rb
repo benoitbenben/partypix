@@ -26,7 +26,6 @@ class PicturesController < ApplicationController
     redirect_to room_path(@room)
   end
 
-
   private
 
   def set_room
