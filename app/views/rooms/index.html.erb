@@ -6,30 +6,25 @@
 
     <div class="row">
 
-      <div class="year">2018</div>
+        <div class="col-xs-12">
+          <div class="year">2018</div>
 
         <% @rooms.each do |room| %>
 
-          <div class="col-xs-12">
-
             <div class="flat-card">
 
-              <div class="flat-card description">
+              <div class="description">
                 <div class= "title"><%= room.name %></div>
                 <div class= "date"><%= room.date %></div>
-                <div class="flat-card picture">
-                <%= image_tag("PartyPix_main_logo.png", size: "100x100") %>
-                </div>
               </div>
 
-
-
+              <div class="picture">
+                  <img src="http://unsplash.it/212/118" alt="">
+              </div>
               <%= link_to "", room_path(room), class: "flat-card-link" %>
             </div>
-
-          </div>
-
         <% end %>
+      </div>
 
     </div>
 
