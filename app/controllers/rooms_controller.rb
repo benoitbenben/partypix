@@ -39,17 +39,6 @@ class RoomsController < ApplicationController
       group("pictures.id").
       order("upvotes_count DESC").
       limit(10)
-
-
-
-
-    # @pictures.each do |picture|
-    #   @upvotes = picture.upvotes
-    #   @picture = picture
-    # end
-
-    # ordered_upvotes = @upvotes.order(upvotes: :desc)
-    # @top10_upvotes = ordered_upvotes.first(10)
   end
 
 end
