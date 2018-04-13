@@ -1,0 +1,56 @@
+.flat-card {
+  height: 100px;
+  padding: 8px;
+  position: relative;
+  margin: 7px auto;
+}
+
+
+.flat-card .description {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 15px;
+}
+
+.flat-card .picture {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 100px;
+  align-item: center;
+  border-radius: 20px;
+}
+
+.flat-card .description .title {
+  font: $body-font;
+  font-size: 24px;
+}
+
+.flat-card .description .date {
+  font: $body-font;
+  font-size: 12px;
+}
+
+.flat-card .description .users {
+
+}
+
+.flat-card .description .comments {
+
+}
+
+// .flat-card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
+
+// .flat-card-link:hover {
+//   opacity: 0.1;
+// }
