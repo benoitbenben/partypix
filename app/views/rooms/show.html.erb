@@ -25,7 +25,7 @@
     <% @room.pictures.each do |picture| %>
       <% if picture.photo %>
         <div class="col-xs-6 col-sm-4 col-md-3 no-padding">
-          <%= link_to cl_image_path(picture.photo) do %>
+          <%= link_to picture_path(picture) do %>
             <%= cl_image_tag picture.photo, width: 200, height: 200, crop: :thumb %>
           <% end %>
         </div>
