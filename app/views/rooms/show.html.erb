@@ -49,3 +49,68 @@
     <%= link_to "upload my pictures", new_room_picture_path(@room), class: "btn btn-minor" %>
   </div>
 </div>
+<div class="container">
+  <div class="text-center">
+    <h2><%= @room.name %> </h2>
+    <h3><%= @room.date %> </h3>
+  </div>
+
+  <br>
+
+    <div class="col-xs-6 col-sm-4 col-md-3">
+      <% @room.pictures.each do |picture| %>
+        <% unless picture.photo.nil? %>
+          <%= link_to cl_image_tag(picture.photo, width: 200, height: 200, crop: :fill), picture_path %>
+      <% end %>
+
+      <% end %>
+    </div>
+
+    <div class="text-center">
+      <p>Room creator : <%= cl_image_tag(@room.user.avatar) %> <%= @room.user.nickname %></p>
+      <p>Room name : <%= @room.name %></p>
+      <p>Date of the Event : <%= @room.date %> </p>
+      <p>Contributors to the room :
+        <% @room.users.each do |user| %>
+          <ul>
+            <li><%= cl_image_tag(user.avatar) %> <%= user.nickname %></li>
+          </ul>
+        <% end %>
+    </div>
+
+  <p><strong>ready to upload some pix ?</strong></p>
+  <%= link_to "upload my pictures", new_room_picture_path(@room), class: "btn btn-minor" %>
+</div>
+
+
+
+
+
+ <div class="show-links">
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "upload.png" %>
+      <br>
+      Upload Pix
+    <% end %>
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "download.png" %>
+      <br>
+      Download Pix
+    <% end %>
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "add-user.png" %>
+    <br>
+    Add People
+    <% end %>
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "more-options.png" %>
+      <br>
+      Room Details
+    <% end %>
+
+
+</div>
