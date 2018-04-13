@@ -94,3 +94,36 @@
   <p><strong>ready to upload some pix ?</strong></p>
   <%= link_to "upload my pictures", new_room_picture_path(@room), class: "btn btn-minor" %>
 </div>
+
+
+
+
+
+ <div class="show-links">
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "upload.png" %>
+      <br>
+      Upload Pix
+    <% end %>
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "download.png" %>
+      <br>
+      Download Pix
+    <% end %>
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "add-user.png" %>
+    <br>
+    Add People
+    <% end %>
+
+    <%= link_to new_room_path, class: "text-center" do %>
+      <%= image_tag "more-options.png" %>
+      <br>
+      Room Details
+    <% end %>
+
+
+</div>

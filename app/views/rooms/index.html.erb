@@ -7,9 +7,13 @@
     <% end %>
   </ul>
 
-  <%= link_to "Create a new room", new_room_path, class: "footer-links" do %>
-    <%= image_tag "rounded-add-button.png", height: 35 %>
-  <% end %>
+
+  <div class="create-links block-center">
+    <%= link_to new_room_path, class: "" do %>
+      <%= image_tag "rounded-add-button.svg", class: "create-icon" %>
+      CREATE A ROOM
+    <% end %>
+  </div>
 </div>
 
 
