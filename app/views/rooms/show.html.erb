@@ -36,7 +36,7 @@
     <% end %>
   </div>
 
-  <div class="text-center">
+  <div class="text-center avatar-small">
     <p>Room creator : <%= cl_image_tag(@room.user.avatar, width: 20, height: 20, crop: :fill) %> <%= @room.user.nickname %></p>
     <p>Contributors to the room :
       <% @room.users.each do |user| %>
