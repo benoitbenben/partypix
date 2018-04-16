@@ -6,7 +6,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find(params[:id])
 
-    @pictures = @room.pictures.all
+    @pictures = @room.pictures
 
     top10_pictures
   end
@@ -52,7 +52,7 @@ class RoomsController < ApplicationController
   end
 
   def top10_pictures
-    @top10_pictures = @pictures.top_10
+    @top10_pictures = @pictures.top_10.select { |picture| picture.upvotes_count > 0 }
   end
 
 end

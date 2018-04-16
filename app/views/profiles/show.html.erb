@@ -1,11 +1,20 @@
+<div class="container">
 <h1>My Partypixer Profile</h1>
 
-<p> Do not forget to upload avatar : </p>
 
-<p> <%= cl_image_tag(@user.avatar, class: 'avatar') %>
-  My Partypixer Avatar</p>
+  <% if @user.avatar.url.nil? %>
+    <%= image_tag("PartyPix_main_logo.png", class: "avatar-default") %>
+      <p><strong>Do not forget to upload avatar</strong></p>
+  <% else %>
+    <%= cl_image_tag(@user.avatar, class: 'avatar') %>
+      My Partypixer Avatar
+  <% end %>
+
+
 <p>Nickname : <%= @user.nickname %> </p>
 <p>First Name : <%= @user.first_name %></p>
 <p>Last Name : <%= @user.last_name %></p>
 
 <%= link_to "Edit my profile", edit_profile_path, class: "btn btn-major"  %>
+
+</div>
