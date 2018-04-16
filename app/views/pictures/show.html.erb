@@ -1,29 +1,39 @@
-<h1>This is this picture</h1>
+<div class="background_rainbow">
+  <div class="container">
+    <p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
+    <p>This photo has been added by: <%= @picture.user.nickname %></p>
 
-<p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
+    <% if @picture.upvotes.find_by(user: current_user).nil? %>
+      <p><%= link_to "Add-Vote", picture_upvote_path(@picture), method: :post %></p>
+    <% elsif @picture.upvotes.find_by(user: current_user) %>
+        <p><%= link_to "Remove-Vote", picture_upvote_path(@picture), method: :delete %></p>
+    <% end %>
 
-<% if @picture.upvotes.find_by(user: current_user).nil? %>
-  <p><%= link_to "Add-Vote", picture_upvote_path(@picture), method: :post %></p>
-<% elsif @picture.upvotes.find_by(user: current_user) %>
-    <p><%= link_to "Remove-Vote", picture_upvote_path(@picture), method: :delete %></p>
-<% end %>
+    <p>Total votes: <%= @upvotes.count %></p>
 
-<p>Total votes: <%= @upvotes.count %></p>
+      <% if @picture.comments.empty? %>
+        <p>There are no comments yet. Feel free to add one ;)</p>
 
-<p>Author: <%= @picture.user.nickname %></p>
+      <% else %>
+        <% @picture.comments.each do |comment| %>
+          <div class="comment">
 
-<% if @picture.comments.empty? %>
-  <p>There are no comments yet. Feel free to add one ;)</p>
+            <div class="infos">
+              <div class="element avatar-small"><%= cl_image_tag(comment.user.avatar) %></div>
+              <div class="element"><%= comment.date %></div>
+            </div>
 
-<% else %>
-  <p>All the pic's comments:</p>
-  <% @picture.comments.each do |comment| %>
-    <p>Author: <%= comment.user.nickname %> ; Date: <%= comment.date %></p>
-    <p>Content: <%= comment.content %></p>
-  <% end %>
-<% end %>
+            <div class="content">
+              <%= comment.content %>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
 
-<%= simple_form_for [@picture, @comment] do |f| %>
-  <%= f.input :content, label: "Add a comment..." %>
-  <%= f.submit "Add", class: "btn btn-primary" %>
-<% end %>
+      <%= simple_form_for [@picture, @comment] do |f| %>
+        <%= f.input :content, label: "Add a comment..." %>
+        <%= f.submit "Add", class: "btn btn-secondary" %>
+      <% end %>
+
+  </div>
+</div>
