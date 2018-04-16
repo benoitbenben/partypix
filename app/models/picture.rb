@@ -3,8 +3,8 @@ class Picture < ApplicationRecord
   belongs_to :room
   belongs_to :user
 
-  has_many :comments
-  has_many :upvotes
+  has_many :comments, dependent: :destroy
+  has_many :upvotes, dependent: :destroy
 
   #uplaoder carrierwave
   mount_uploader :photo, PhotoUploader

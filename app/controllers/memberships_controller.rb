@@ -4,6 +4,7 @@ class MembershipsController < ApplicationController
   end
 
   def new
+    @room = Room.find(params[:room_id])
     @users = User.order(email: :asc).all
   end
 
