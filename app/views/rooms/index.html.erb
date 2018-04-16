@@ -30,7 +30,7 @@
                 <% if !room.top_picture.nil? %>
                   <%= cl_image_tag room.top_picture.photo, width: 200, height: 110, crop: :thumb, gravity: :face %>
                 <% else %>
-                  <img src="http://unsplash.it/212/118" alt="", class="picture">
+                   <%= image_tag("PartyPix_main_logo.png", class: "picture-default") %>
                 <% end %>
               </div>
 

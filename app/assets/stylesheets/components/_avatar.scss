@@ -1,6 +1,6 @@
 .avatar {
-  height: 48px;
-  width: 48px;
+  height: 88px;
+  width: 88px;
   border-radius: 50%;
 }
 
@@ -8,4 +8,10 @@
   height: 24px;
   width: 24px;
   border-radius: 50%;
+}
+.avatar-default {
+  height: 88px;
+  width: 88px;
+  border-radius: 50%;
+  border: $blue 3px solid;
 }

@@ -32,6 +32,12 @@
   border-radius: 5px;
 }
 
+.flat-card .picture-default {
+  border: $blue 1px solid;
+  width: 200px;
+  height: 110px;
+ }
+
 .flat-card .description {
   position: absolute;
   z-index: 1;
