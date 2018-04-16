@@ -4,6 +4,7 @@ class MembershipsController < ApplicationController
   end
 
   def new
+    @room = Room.find(params[:room_id])
     @users = User.order(email: :asc).all
   end
 
@@ -38,6 +39,17 @@ class MembershipsController < ApplicationController
     # end
 
   end
+
+  # def edit
+  #   @room = Room.find(params[:room_id])
+  # end
+
+  # def update
+  #   @room = Room.find(params[:room_id])
+  #   @room.update(room_params)
+
+  #   redirect_to room_path(@room)
+  # end
 
   private
 

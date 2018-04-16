@@ -1,13 +1,21 @@
 <div class="container">
-      <h1>2/2 - You can also add friends</h1>
 
-  <div class="row">
+  <div class="text-center">
+    <% if @room.memberships.any? %>
+      <h2><br>Add new friends to your room</h2>
+    <% else %>
+      <strong>2/2</strong>
+      <h2><br>Select then invite friends to your room</h2>
+    <% end %>
+  </div>
+
+  <div class="row text-center">
 
     <div class="col-xs-10 col-xs-offset-1">
 
     <%= form_tag room_memberships_path do %>
       <%= select_tag "contributors_ids[]", options_from_collection_for_select(@users, :id, :email), class: 'select2 (placeholder: "Select friends")', multiple:'' %>
-      <%= submit_tag 'Add' %>
+      <%= submit_tag 'Add', class: "btn btn-primary" %>
     <% end %>
     </div>
   </div>

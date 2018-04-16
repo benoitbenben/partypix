@@ -92,6 +92,8 @@
 
     <%= link_to 'Delete Room', room_path(@room),
       method: :delete,
-      data: { confirm: "Are you sure?" } %>
+      data: { confirm: "Are you sure ?" } %>
+
+    <%= link_to 'Add New Member', new_room_membership_path(@room) %>
 
 </div>
