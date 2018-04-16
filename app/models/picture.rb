@@ -12,7 +12,7 @@ class Picture < ApplicationRecord
   scope :top_10, -> do
     left_outer_joins(:upvotes).
       select("pictures.*, count(upvotes.id) AS upvotes_count").
-      group("pictures.id").
+      group("pictures.id, upvotes.id").
       order("upvotes_count DESC").
       limit(10)
   end
