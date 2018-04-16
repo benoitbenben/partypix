@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Party Pix"
+meta_title: "Party Pix - Here is the place to be to upload and share all the pics for your party."
+meta_description: "All last night pic in one place, just create a room, invite your friend and thast's all !"
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@LeWagonNantes"   # required for Twitter Cards
