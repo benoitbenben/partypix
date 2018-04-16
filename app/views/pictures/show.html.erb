@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@pictures.name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @picture.description %>
+<% content_for :meta_image, cl_image_path(@picture.photo.path) %>
+
 <div class="background_rainbow">
   <div class="container">
     <p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
@@ -37,3 +41,6 @@
 
   </div>
 </div>
+
+
+
