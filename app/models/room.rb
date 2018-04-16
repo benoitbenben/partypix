@@ -4,7 +4,7 @@ class Room < ApplicationRecord
   # direct
   has_many :pictures
 
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
 
   # through membership table
   has_many :users, through: :memberships

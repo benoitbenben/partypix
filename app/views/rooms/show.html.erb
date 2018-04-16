@@ -77,5 +77,10 @@
       Room Details
     <% end %>
 
+    <%= link_to 'Edit Room', edit_room_path(@room) %>
+
+    <%= link_to 'Delete Room', room_path(@room),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
 
 </div>
