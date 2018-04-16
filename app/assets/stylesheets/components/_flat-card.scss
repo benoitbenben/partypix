@@ -37,7 +37,6 @@
   z-index: 1;
   left: 10px;
   top: 10px;
-  width: 50%;
 }
 
 .flat-card .description .date {
@@ -47,15 +46,13 @@
 }
 
 .flat-card .description .data-container {
-  bottom: 10px;
-  left: 5 px;
+  margin-top: 5px;
   width: 100px;
   display: flex;
   justify-content: space-around;
 }
 
 .flat-card .description .data-container .data-element {
-
 }
 
 .flat-card .link {
