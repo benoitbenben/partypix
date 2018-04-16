@@ -40,17 +40,6 @@ class MembershipsController < ApplicationController
 
   end
 
-  # def edit
-  #   @room = Room.find(params[:room_id])
-  # end
-
-  # def update
-  #   @room = Room.find(params[:room_id])
-  #   @room.update(room_params)
-
-  #   redirect_to room_path(@room)
-  # end
-
   private
 
   def contributor_params
