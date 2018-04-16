@@ -15,5 +15,10 @@ class Room < ApplicationRecord
 
   # through pictures pour le nombre de votes
   has_many :upvotes, through: :pictures
+
+
+  def top_picture
+    self.pictures.top_10.first
+  end
 end
 

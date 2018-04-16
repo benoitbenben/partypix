@@ -34,11 +34,7 @@ class RoomsController < ApplicationController
   end
 
   def top10_pictures
-    @top10_pictures = @pictures.left_outer_joins(:upvotes).
-      select("pictures.*, count(upvotes.id) AS upvotes_count").
-      group("pictures.id").
-      order("upvotes_count DESC").
-      limit(10)
+    @top10_pictures = @pictures.top_10
   end
 
 end
