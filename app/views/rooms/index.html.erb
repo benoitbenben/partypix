@@ -4,24 +4,41 @@
 
     <div class="row">
 
-        <div class="col-xs-12">
-          <div class="year">2018</div>
+      <div class="col-xs-12">
+        <div class="year">2018</div>
+      </div>
 
-        <% @rooms.each do |room| %>
+          <% @rooms.each do |room| %>
+          <div class="col-xs-12">
 
             <div class="flat-card">
 
               <div class="description">
+
                 <div class= "title"><%= room.name %></div>
-                <div class= "date"><%= room.date %></div>
+
+                <div class= "date"><%= room.date.strftime("%B %Y") %></div>
+
+                <div class="data-container">
+                  <div class="data-element"><i class="fa fa-users"></i></div>
+                  <div class="data-element"><i class="fa fa-comment"></i></div>
+                </div>
+
               </div>
 
               <div class="picture">
-                  <img src="http://unsplash.it/212/118" alt="">
+                <% if !room.top_picture.nil? %>
+                  <%= cl_image_tag room.top_picture.photo, width: 200, height: 110, crop: :thumb, gravity: :face %>
+                <% else %>
+                  <img src="http://unsplash.it/212/118" alt="", class="picture">
+                <% end %>
               </div>
-              <%= link_to "", room_path(room), class: "flat-card-link" %>
+
+              <%= link_to "", room_path(room), class: "link" %>
+
             </div>
-        <% end %>
+          </div>
+          <% end %>
       </div>
 
     </div>
@@ -30,9 +47,9 @@
 
 </div>
  <%= link_to new_room_path, class: "" do %>
-<div class="create-links">
+   <div class="create-links">
       <%= image_tag "rounded-add-button.svg", class: "create-icon" %>
       CREATE A ROOM
-</div>
+   </div>
  <% end %>
 

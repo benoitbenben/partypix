@@ -1,8 +1,14 @@
-<h1>2/2 - Here you can select contributor amongst all users</h1>
+<div class="container">
+      <h1>2/2 - You can also add friends</h1>
 
-<%= form_tag room_memberships_path do %>
-  <%= select_tag "contributors_ids[]", options_from_collection_for_select(@users, :id, :email), class: 'select2', multiple:'' %>
-  <%= submit_tag 'Add' %>
-<% end %>
+  <div class="row">
 
+    <div class="col-xs-10 col-xs-offset-1">
 
+    <%= form_tag room_memberships_path do %>
+      <%= select_tag "contributors_ids[]", options_from_collection_for_select(@users, :id, :email), class: 'select2 (placeholder: "Select friends")', multiple:'' %>
+      <%= submit_tag 'Add' %>
+    <% end %>
+    </div>
+  </div>
+</div>
