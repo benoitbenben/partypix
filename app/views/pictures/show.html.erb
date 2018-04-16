@@ -1,15 +1,7 @@
-<% content_for :meta_title, "#{@pictures.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @picture.description %>
-<% content_for :meta_image, cl_image_path(@picture.photo.path) %>
-
 <div class="background_rainbow">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p><%= cl_image_tag(@picture.photo, class: "original-picture") %></p>
-        <p>Credits: <%= cl_image_tag(@picture.user.avatar, class: "avatar-small") %><%= @picture.user.nickname %></p>
-      </div>
-    </div>
+    <p><%= cl_image_tag(@picture.photo, width: 300, height: 300, crop: :fill) %></p>
+    <p>This photo has been added by: <%= @picture.user.nickname %></p>
 
     <% if @picture.upvotes.find_by(user: current_user).nil? %>
       <p><%= link_to "Add-Vote", picture_upvote_path(@picture), method: :post %></p>
@@ -27,7 +19,7 @@
           <div class="comment">
 
             <div class="infos">
-              <div class="element"><%= cl_image_tag(comment.user.avatar, class: "avatar-small") %></div>
+              <div class="element avatar-small"><%= cl_image_tag(comment.user.avatar) %></div>
               <div class="element"><%= comment.date %></div>
             </div>
 
