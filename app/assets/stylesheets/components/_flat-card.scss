@@ -59,6 +59,12 @@
 }
 
 .flat-card .description .data-container .data-element {
+    color: $dark-gray;
+}
+
+.flat-card .description .data-container .data-element i {
+  color: $light-gray;
+
 }
 
 .flat-card .link {
