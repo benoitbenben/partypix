@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   root to: 'rooms#index'
 
-  # GET /rooms + GET rooms/id + GET rooms/new + POST rooms
-  resources :rooms, only: [:index, :show, :new, :create] do
+  # GET /rooms + GET rooms/id + GET rooms/new + GET rooms/:id/edit + PATCH rooms/:id + DELETE rooms/:id + POST rooms
+  resources :rooms, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     # GET rooms/:room_id/download + GET rooms/:room_id/settings
      member do
       get :download
