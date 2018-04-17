@@ -40,6 +40,11 @@
       <%= yield %>
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
+      <script>
+      $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+      });
+      </script>
      </div>
   </body>
 </html>

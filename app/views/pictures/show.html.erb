@@ -6,10 +6,10 @@
         <p"><%= cl_image_tag(@picture.photo, class: "original-picture") %></p>
         <h3>Taken with <i class="fa fa-heart"></i> by <%= cl_image_tag(@picture.user.avatar, class: "avatar-small") %><%= @picture.user.nickname %></h3>
 
+
       <% if @picture.upvotes.find_by(user: current_user).nil? %>
 
          <%= link_to picture_upvote_path(@picture), method: :post do %>
-<!--             <i class="fa fa-thumbs-up"></i><span class="badge"><%= @upvotes.count %></span> -->
             <button type="button" class="btn btn-success">
             <i class="fa fa-thumbs-up"></i>
             <span class="badge"><%= @upvotes.count %></span></button>
@@ -17,8 +17,6 @@
 
       <% elsif @picture.upvotes.find_by(user: current_user) %>
         <%= link_to picture_upvote_path(@picture), method: :delete do %>
-         <!--   <i class="fa fa-thumbs-down"></i><span class="badge"><%= @upvotes.count %></span>
-           <button type="button" class="btn btn-success">vote <span class="badge"><%= @upvotes.count %></span></button> -->
             <button type="button" class="btn btn-success">
             <i class="fa fa-thumbs-down"></i>
             <span class="badge"><%= @upvotes.count %></span></button>
