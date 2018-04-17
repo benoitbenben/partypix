@@ -1,12 +1,17 @@
 <html>
 
-<div class="text-center">
-  <h1>Add your pictures!</h1>
+  <div class="text-center">
+    <h1>Add your pictures!</h1>
+  </div>
+  <p><em><strong>Partypix Drag n'Drop Zone :</strong></em></p>
 
-  <%= simple_form_for [@room, @picture] do |f| %>
-    <%= f.input :photo, label: "Select your pictures!", input_html: {multiple: true, name: "photos[]"} %>
-    <%= f.input :photo_cache, as: :hidden%>
-    <%= f.submit 'Add', class: "btn btn-minor" %>
+  <%= simple_form_for [@room, @picture], html: { class: 'dropzone', id: 'dropzone-upload' } do |f| %>
+    <div class="fallback">
+      <%= f.input :photo, label: "Select your pictures!", input_html: {multiple: true, name: "photos[]"} %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.submit 'Go', class: "btn btn-major" %>
+    </div>
   <% end %>
-</div>
+  <%= link_to "validate", room_path(@room), class: "btn btn-major" %>
+
 </html>
