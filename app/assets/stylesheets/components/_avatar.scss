@@ -10,6 +10,13 @@
   border-radius: 50%;
 }
 
+.avatar-small-creator {
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: $blue 2px solid;
+  }
+
 .avatar-default {
   height: 88px;
   width: 88px;

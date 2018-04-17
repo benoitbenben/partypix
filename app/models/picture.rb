@@ -14,6 +14,7 @@ class Picture < ApplicationRecord
       select("pictures.*, count(upvotes.id) AS upvotes_count").
       group("pictures.id, upvotes.id").
       order("upvotes_count DESC").
-      limit(10)
+      limit(10).
+      distinct
   end
 end
