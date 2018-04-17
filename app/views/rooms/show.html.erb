@@ -56,35 +56,35 @@
   <div class="bottom-menu-flex">
   <div class="text-center">
     <%= link_to new_room_picture_path(@room), class: "bottom-menu-element" do %>
-      <%= image_tag "upload.png" %>
+        <i class="fas fa-upload fa-4x"></i>
       <br>
       Upload Pix
     <% end %>
 
     <%= link_to new_room_path, class: "bottom-menu-element" do %>
-      <%= image_tag "download.png" %>
+      <i class="fas fa-download fa-4x"></i>
       <br>
       Download Pix
     <% end %>
 
 
     <%= link_to new_room_membership_path(@room), class: "bottom-menu-element" do %>
-      <%= image_tag "add-user.png" %>
+      <i class="fas fa-user-plus fa-4x"></i>
       <br>
       Add Member
     <% end %>
 
     <%= link_to edit_room_path(@room), class: "bottom-menu-element" do %>
-      <%= image_tag "more-options.png" %>
+      <i class="fas fa-edit fa-4x"></i>
       <br>
-      Edit room
+      Edit Room
     <% end %>
 
     <%= link_to room_path(@room), method: :delete,
         data: { confirm: "Are you sure ?" }, class: "bottom-menu-element" do %>
-        <%= image_tag "more-options.png" %>
+        <i class="fas fa-trash-alt fa-4x"></i>
         <br>
-        Delete room
+        Delete Room
     <% end %>
   </div>
   </div>
