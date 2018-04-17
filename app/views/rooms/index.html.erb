@@ -45,11 +45,13 @@
 
   </div>
 
-</div>
- <%= link_to new_room_path, class: "" do %>
-   <div class="create-links">
-      <%= image_tag "rounded-add-button.svg", class: "create-icon" %>
-      CREATE A ROOM
-   </div>
- <% end %>
+  <div class="bottom-menu">
+      <div class="bottom-menu-flex">
+        <%= link_to new_room_path, class: "bottom-menu-element bottom-flex" do %>
+          <%= image_tag "rounded-add-button.svg" %>
+          <span>CREATE A ROOM</span>
+
+       <% end %>
+       </div>
+ </div>
 
