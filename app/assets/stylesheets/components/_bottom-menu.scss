@@ -1,0 +1,48 @@
+.bottom-menu {
+  background-color: rgba($dark-gray, 0.8);
+  height: 62px;
+  width: 100vw;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+}
+
+.bottom-menu-element {
+
+  color: $blue;
+  font-size: 10px;
+  display: inline-block;
+  opacity: 1;
+}
+
+.bottom-menu-element img {
+  width: 30px;
+}
+
+.bottom-menu-element span {
+  font-size: 16px;
+  padding-left: 5px;
+}
+
+.bottom-menu-element:hover {
+  color: orange;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.bottom-flex {
+  display: flex;
+  align-items: center;
+
+}
+// .bottom-menu link:hover {
+//   z-index: 1;
+//   color: orange;
+//   opacity: 1;
+// }
+.bottom-menu-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
