@@ -2,6 +2,10 @@
   <div class="container">
     <div class="row">
 
+        <%= link_to "Prev Post", prev_room_picture_path(@room, @picture) %>
+        <%= link_to "Next Post", next_room_picture_path(@room, @picture) %>
+
+
       <div class="col-xs-12">
         <p"><%= cl_image_tag(@picture.photo, class: "original-picture") %></p>
         <h3>Taken with <i class="fa fa-heart"></i> by <%= @picture.user.nickname %></h3>

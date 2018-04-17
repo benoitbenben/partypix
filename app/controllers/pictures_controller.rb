@@ -6,17 +6,19 @@ class PicturesController < ApplicationController
     @upvote = Upvote.new
 
     @upvotes = @picture.upvotes.all
+    @room    = @picture.room
   end
 
   def new
     set_room
     @picture = Picture.new
   end
+
   # create pour drag n' drop
   def create
-     @room = Room.find(params[:room_id])
+    @room = Room.find(params[:room_id])
 
-     respond_to do |format|
+    respond_to do |format|
       format.html do
         photos = params[:photos]
         photos.each do |photo|
@@ -24,17 +26,13 @@ class PicturesController < ApplicationController
           picture.user = current_user
           picture.save
         end
-      # stay on the same page
-      # redirect_to picture_path(@picture)
 
-      redirect_to room_path(@room)
-
+        redirect_to room_path(@room)
       end
 
-     format.json do
+      format.json do
         @picture = Picture.create!(room: @room, user: current_user, photo: params[:photo])
         render json: { picture_id: @picture.id }
-
       end
     end
   end
@@ -47,20 +45,18 @@ class PicturesController < ApplicationController
     render json: {}
   end
 
+  # menu next et prev pictures show
+  def next
+    @room    = Room.find(params[:room_id])
+    @picture = @room.pictures.where("id > ?", params[:id]).limit(1).first || @room.pictures.order(:id).first
+    redirect_to picture_path(@picture)
+  end
 
-  # create simple_form
-  # def create
-  #   set_room
-
-  #   # On prend en compte l'upload de plusieurs photos simultanément
-  #   photos = params[:photos]
-  #   photos.each do |photo|
-  #     @picture = Picture.new(room: @room, photo: photo)
-  #     @picture.user = current_user
-  #     @picture.save
-  #   end
-  #   redirect_to room_path(@room)
-  # end
+  def prev
+    @room = Room.find(params[:room_id])
+    @picture = @room.pictures.where("id < ?", params[:id]).limit(1).first || @room.pictures.order(:id).last
+    redirect_to picture_path(@picture)
+  end
 
   private
 
@@ -71,8 +67,4 @@ class PicturesController < ApplicationController
   def picture_params
     params.require(:picture).permit(:photo)
   end
-
 end
-
-
-
