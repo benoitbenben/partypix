@@ -14,6 +14,7 @@
   position: fixed;
   bottom: 0;
   padding: 0;
+  z-index: 100;
 }
 .show-links a {
   color: $blue;
