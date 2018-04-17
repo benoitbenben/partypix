@@ -1,5 +1,6 @@
 .background-rainbow {
   background: linear-gradient($yellow, $blue);
   background: cover;
+  min-height: 100vh;
   padding-bottom: 50px;
 }
