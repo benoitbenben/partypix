@@ -1,13 +1,10 @@
 .flat-card {
-  height: 140px;
+  height: 125px;
   padding: 8px;
-  margin: 5px auto;
+  margin-top: 5px;
   position: relative;
   display: flex;
 }
-
-
-
 
 .flat-card .description .title {
 
@@ -28,6 +25,7 @@
   top: 5px;
   right: 5px;
   box-shadow: 2px 2px 0px rgba(119, 97, 97, 0.3);
+  border-radius: 5px;
 }
 
 .flat-card .picture img {
