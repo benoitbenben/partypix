@@ -19,7 +19,9 @@
       <% end %>
 
       <% if @picture.comments.empty? %>
-        <p>There are no comments yet. Feel free to add one ;)</p>
+        <div class="comment-content">
+          <p>No comment yet</p>
+        </div>
 
       <% else %>
 
@@ -44,7 +46,7 @@
 
         <div class="comment-add">
           <%= simple_form_for [@picture, @comment] do |f| %>
-            <%= f.input :content, label:" ", placeholder: "Add your comment..." %>
+            <%= f.input :content, label:"...", placeholder: "Add your comment..." %>
             <%= f.submit "Add", class: "btn btn-secondary" %>
           <% end %>
         </div>
