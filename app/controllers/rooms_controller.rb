@@ -1,6 +1,9 @@
 class RoomsController < ApplicationController
   def index
     @rooms = current_user.all_rooms
+
+    @ordered_rooms = @rooms.sort{|a,b| b.date <=> a.date}
+
   end
 
   def show
