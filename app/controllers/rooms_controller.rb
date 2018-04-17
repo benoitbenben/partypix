@@ -1,6 +1,11 @@
 class RoomsController < ApplicationController
   def index
     @rooms = current_user.all_rooms
+
+    @ordered_rooms = @rooms.sort{|a,b| b.date <=> a.date}
+
+    @yearly_grouped_rooms = @ordered_rooms.group_by{|room| room.date.year }
+
   end
 
   def show
