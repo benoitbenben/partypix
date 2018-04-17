@@ -32,3 +32,4 @@ var dropzone = new Dropzone("#dropzone-upload",
     }
   }
 );
+
