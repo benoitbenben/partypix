@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
 
   # GET /pictures/id
-  resources :pictures, only: [:show] do
+  resources :pictures, only: [:show, :destroy] do
     # POST /pictures/picture_id/comments
     resources :comments, only: [:create]
     # POST /pictures/picture_id/upvote + DELETE /pictures/picture_id/upvote
