@@ -4,6 +4,8 @@ class RoomsController < ApplicationController
 
     @ordered_rooms = @rooms.sort{|a,b| b.date <=> a.date}
 
+    @yearly_grouped_rooms = @ordered_rooms.group('year'(:date))
+
   end
 
   def show
