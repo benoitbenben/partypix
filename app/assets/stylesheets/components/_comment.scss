@@ -1,33 +1,35 @@
 .comment {
-  display: flex;
   padding-top: 5px;
   margin: 10px auto;
 }
 
-.comment .infos {
+.comment-display-left {
+  display:flex;
+}
+
+.comment-display-right {
+  display:flex;
+  flex-direction: row-reverse;
+}
+
+.comment-infos {
   display: flex;
   flex-direction: column;
 }
 
-.comment .content {
-  background: white;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-.comment .infos .element {
+.comment-infos-element {
   margin: 2px;
   font: $body-font;
   font-size: 10px;
   text-align: center;
 }
 
-// .comment-add {
-//   height: 150px;
-//   width: 100vw;
-//   position: fixed;
-//   bottom: 0;
-// }
+.comment-content {
+  background-color: rgba($light-gray, 0.1);
+  color: $dark-gray;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
