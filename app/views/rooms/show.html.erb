@@ -54,37 +54,43 @@
 
 <div class="show-links">
 
-  <%= link_to new_room_picture_path(@room), class: "text-center" do %>
-    <%= image_tag "upload.png" %>
-    <br>
-    Upload Pix
-  <% end %>
+  <div class="text-center">
+    <%= link_to new_room_picture_path(@room), class: "" do %>
+      <%= image_tag "upload.png" %>
+      <br>
+      Upload Pix
+    <% end %>
+  </div>
+  <div class="text-center">
+    <%= link_to new_room_path, class: "" do %>
+      <%= image_tag "download.png" %>
+      <br>
+      Download Pix
+    <% end %>
+  </div>
 
-  <%= link_to new_room_path, class: "text-center" do %>
-    <%= image_tag "download.png" %>
-    <br>
-    Download Pix
-  <% end %>
+  <div class="text-center">
+    <%= link_to new_room_membership_path(@room), class: "" do %>
+      <%= image_tag "add-user.png" %>
+      <br>
+      Add Members
+    <% end %>
+  </div>
 
-  <%= link_to new_room_path, class: "text-center" do %>
-    <%= image_tag "add-user.png" %>
-  <br>
-  Add People
-  <% end %>
+  <div class="text-center">
+    <%= link_to edit_room_path(@room), class: "" do %>
+      <%= image_tag("edit.png", size: "35x35") %>
+      <br>
+      Edit Room
+    <% end %>
+  </div>
 
-  <%= link_to new_room_path, class: "text-center" do %>
-    <%= image_tag "more-options.png" %>
-    <br>
-    Room Details
-  <% end %>
-
-  <%= link_to 'Edit Room', edit_room_path(@room) %>
-
-
-    <%= link_to 'Delete Room', room_path(@room),
-      method: :delete,
-      data: { confirm: "Are you sure ?" } %>
-
-    <%= link_to 'Add New Member', new_room_membership_path(@room) %>
-
+  <div class="text-center">
+    <div>
+      <%= image_tag("blue-rubbish-bin.png", size: "35x35") %>
+    </div>
+  <%= link_to 'Delete Room', room_path(@room),
+    method: :delete,
+    data: { confirm: "Are you sure ?" }, class: "text-center" %>
+  </div>
 </div>
