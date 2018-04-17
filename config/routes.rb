@@ -10,7 +10,12 @@ Rails.application.routes.draw do
       get :settings
     end
     # GET rooms/:room_id/pictures/new + POST rooms/:id/pictures
-    resources :pictures, only: [:new, :create]
+    resources :pictures, only: [:new, :create] do
+      member do
+        get :next
+        get :prev
+      end
+    end
     # GET /rooms/:room_id/memberships/new + POST rooms/:room_id/memberships
     resources :memberships, only: [:new, :create]
   end

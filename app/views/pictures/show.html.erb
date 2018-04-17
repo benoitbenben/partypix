@@ -2,6 +2,13 @@
   <div class="container">
     <div class="row">
 
+        <%= link_to "Prev Post", prev_room_picture_path(@room, @picture) %>
+            <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+        <%= link_to "Next Post", next_room_picture_path(@room, @picture) %>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+
       <div class="col-xs-12">
         <p"><%= cl_image_tag(@picture.photo, class: "original-picture") %></p>
         <h3>Taken with <i class="fa fa-heart"></i> by <%= @picture.user.nickname %></h3>
