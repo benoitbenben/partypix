@@ -1,22 +1,6 @@
-
-// navigation
-.navbar-wagon {
-  background-color: transparent;
-}
-.navbar-wagon-link {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 14px;
-}
-
 .background_black {
   background: black;
-}
-
-.comment-content {
-  color: white;
-}
-.comment-infos-element {
-  color: white;
+  min-height: calc(100vh-70px);
 }
 
 .wrapper {
@@ -33,20 +17,43 @@ a.nav-item.glyphicon{
   height: 100%;
   padding: 100px 0;
   color: white;
+  text-decoration: none;
 }
 
+// sous les picture
+.flex-picture {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.bord-arrondi {
+  border-radius: 50%;
+  border: 1px solid white;
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
 // vote
 
 .votes {
-  position: relative;
-  height: 20px;
   font-color: white;
 }
 
-.votes span {
+.bord-arrondi p {
   color: white;
+  margin-bottom: 0;
 }
+
+.bord-arrondi svg {
+  font-size: 30px;
+}
+
 .btn-success {
   border-radius: 20px;
   margin-bottom: 5px;
@@ -74,4 +81,15 @@ a.nav-item.glyphicon{
 
 .back-page a:hover {
   color: $blue;
+
+  // commentaires
+.comment-content {
+  margin-top: 5px;
+  color: black;
+}
+.comment-infos-element {
+  color: black;
+}
+.bord-arrondi .data-element .svg-pic {
+  color: white;
 }

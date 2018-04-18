@@ -1,7 +1,7 @@
 <html>
 
   <div class="text-center">
-    <h1>Add your pictures!</h1>
+    <h2>Add your pictures!</h2>
 
     <%= simple_form_for [@room, @picture], html: { class: 'dropzone col-xs-10 col-xs-offset-1', id: 'dropzone-upload' } do |f| %>
       <div class="fallback">
@@ -10,6 +10,6 @@
         <%= f.submit 'Go', class: "btn btn-major" %>
       </div>
     <% end %>
-    <%= link_to "validate", room_path(@room), class: "btn btn-major" %>
+    <%= link_to "upload my pix", room_path(@room), class: "btn btn-major-link" %>
   </div>
 </html>
