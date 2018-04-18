@@ -64,3 +64,14 @@ a.nav-item.glyphicon{
   color: rgba(255, 255, 255, 0.8);
   margin-right: 10px;
 }
+
+
+// Go back to the room
+.back-page a {
+  color: $light-gray;
+  font-size: 24px;
+}
+
+.back-page a:hover {
+  color: $blue;
+}
