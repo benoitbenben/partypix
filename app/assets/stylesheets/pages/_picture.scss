@@ -7,7 +7,6 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 }
 .nav-item.original-picture {
   flex: grow;
@@ -81,7 +80,7 @@ a.nav-item.glyphicon{
 
 .back-page a:hover {
   color: $blue;
-
+}
   // commentaires
 .comment-content {
   margin-top: 5px;
