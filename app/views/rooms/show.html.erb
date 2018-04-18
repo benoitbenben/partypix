@@ -19,32 +19,23 @@
     </div>
   </div>
 
-  <% if !@top10_pictures.empty? %>
-    <div class="text-center">
-      <p> <strong>Top10</strong> pictures</p>
-    </div>
+   <div class="cards-container">
 
-    <div class="top10-container">
-
-        <% @top10_pictures.each do |picture| %>
-
-          <%= link_to picture_path(picture) do %>
-            <%= cl_image_tag picture.photo, class: "top10card" %>
-          <% end %>
-
+    <% @top10_pictures.each do |picture| %>
+      <div class="top10-card">
+        <%= link_to picture_path(picture) do %>
+          <%= cl_image_tag picture.photo, class: "card" %>
+          <span class="top10-card-votes badge"><%= picture.upvotes.count %></span>
         <% end %>
-    </div>
-  <% end %>
+      </div>
+    <% end %>
 
-  <div class="text-center">
-    <p> <strong>All</strong> pictures</p>
-  </div>
-
-  <div class="cards-container">
     <% @all_other_pictures.each do |picture| %>
+      <div class="card-element">
         <%= link_to picture_path(picture) do %>
           <%= cl_image_tag picture.photo, class: "card" %>
         <% end %>
+      </div>
     <% end %>
   </div>
 </div>
