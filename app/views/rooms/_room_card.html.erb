@@ -9,15 +9,20 @@
       <div class= "date"><%= room.date.strftime("%d %b %Y") %></div>
 
       <div class="data-container">
-        <div class="data-element"><i class="fa fa-users"></i>   <%= room.users.count %></div>
-        <div class="data-element"><i class="fa fa-comment"></i>   <%= room.comments.count %></div>
+        <div class="data-element"><i class="fa fa-users data-element-icon"></i>
+          <span class="data-element-number"><%= room.users.count %></span>
+        </div>
+        <div class="data-element">
+          <i class="fa fa-comment data-element-icon"></i>
+          <span class="data-element-number"><%= room.comments.count %></span>
+        </div>
       </div>
 
     </div>
 
     <div class="picture">
       <% if !room.top_picture.nil? %>
-        <%= cl_image_tag room.top_picture.photo, width: 200, height: 110, crop: :thumb, gravity: :face %>
+        <%= cl_image_tag room.top_picture.photo, width: 200, height: 110, crop: :thumb, gravity: :center %>
       <% else %>
          <%= image_tag("PartyPix_main_logo.png", class: "picture-default") %>
       <% end %>
