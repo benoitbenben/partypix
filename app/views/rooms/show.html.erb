@@ -41,7 +41,7 @@
   </div>
 
   <div class="cards-container">
-    <% @room.pictures.each do |picture| %>
+    <% @all_other_pictures.each do |picture| %>
         <%= link_to picture_path(picture) do %>
           <%= cl_image_tag picture.photo, class: "card" %>
         <% end %>
