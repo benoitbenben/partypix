@@ -73,9 +73,17 @@
 }
 
 // vote
+
+.votes {
+  position: relative;
+  height: 20px;
+}
 .btn-success {
   border-radius: 20px;
   margin-bottom: 5px;
+  bottom: 0px;
+  right: 10px;
+  position: absolute;
 }
 // upvote
 .fa-thumbs-up {
