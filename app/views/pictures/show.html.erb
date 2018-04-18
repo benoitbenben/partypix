@@ -1,75 +1,81 @@
 <div class="background_black">
   <div class="container">
     <div class="row">
+      <div class="col-xs-12">
 
 <!-- btn prev next -->
 
-      <div class="col-xs-12">
         <div class="wrapper">
           <%= link_to "", prev_room_picture_path(@room, @picture), class:"nav-item glyphicon glyphicon-chevron-left" %>
           <%= cl_image_tag(@picture.photo, class: "nav-item original-picture") %>
           <%= link_to "", next_room_picture_path(@room, @picture), class:"nav-item glyphicon glyphicon-chevron-right" %>
         </div>
-        <h3>Take by <%= @picture.user.nickname %></h3>
+        <h3>Taken by <%= @picture.user.nickname %></h3>
 
 
+        <div class="flex-picture">
+          <!-- votes -->
+            <div class= "bord-arrondi text-center ">
+              <div class="votes">
+                <% if @picture.upvotes.find_by(user: current_user).nil? %>
+                  <%= link_to picture_upvote_path(@picture), method: :post , class: "text-center" do %>
+                    <i class="fa fa-thumbs-up"></i>
+                  <% end %>
+                  <p><%= @upvotes.count %></p>
 
-<!-- votes -->
-      <div class="votes">
-      <% if @picture.upvotes.find_by(user: current_user).nil? %>
-         <%= link_to picture_upvote_path(@picture), method: :post do %>
-            <i class="fa fa-thumbs-up"></i>
-          <% end %>
+                <% else @picture.upvotes.find_by(user: current_user) %>
+                  <%= link_to picture_upvote_path(@picture), method: :delete do %>
+                    <i class="fa fa-thumbs-down"></i>
+                  <% end %>
+                  <p><%= @upvotes.count %></p>
+                <% end %>
+              </div>
+            </div>
+          <!-- comment -->
 
-        <span><%= @upvotes.count %></span></button>
-
-      <% else @picture.upvotes.find_by(user: current_user) %>
-        <%= link_to picture_upvote_path(@picture), method: :delete do %>
-            <i class="fa fa-thumbs-down"></i>
-          <% end %>
-
-        <span><%= @upvotes.count %></span></button>
-
-      <% end %>
-      </div>
-
-
-<!-- comment -->
-      <% if @picture.comments.empty? %>
-        <div class="comment-content">
-          <p>No comment yet</p>
-        </div>
-
-      <% else %>
-
-        <% @picture.comments.each do |comment| %>
-          <div class="comment">
-            <div class=<%= comment.user == current_user ? "comment-display-right" : "comment-display-left" %> >
-
-                <div class="comment-infos">
-                  <div class="comment-infos-element"><%= cl_image_tag(comment.user.avatar, class: "avatar-small creator") %></div>
-                  <div class="comment-infos-element"><%= comment.date %></div>
-                </div>
-
-                <div class="comment-content">
-                  <%= comment.content %>
-                </div>
-
+          <%= link_to "#comment-section" do%>
+          <div class= "bord-arrondi text-center" >
+            <div class=" data-element">
+              <i class="svg-pic fa fa-comment"></i>
+              <p> <%= @picture.comments.count %></p>
             </div>
           </div>
-        <% end %>
-
-      <% end %>
-
-        <div class="comment-add">
-          <%= simple_form_for [@picture, @comment] do |f| %>
-            <%= f.input :content, label:"...", placeholder: "Add your comment..." %>
-            <%= f.submit "Add", class: "btn btn-secondary" %>
-          <% end %>
+          <%end%>
         </div>
-
+        </div>
+        </div>
       </div>
-
     </div>
-  </div>
+
+
+<div class="container">
+
+  <h2 class="text-center">Pix's Comments</h2>
+          <div class= "comment-scroll" id="comment-section">
+            <% if @picture.comments.empty? %>
+              <div class="comment-content">
+                <p>No comment yet</p>
+              </div>
+            <% else %>
+              <% @picture.comments.each do |comment| %>
+                <div class="comment">
+                  <div class=<%= comment.user == current_user ? "comment-display-right" : "comment-display-left" %> >
+                      <div class="comment-infos">
+                        <div class="comment-infos-element"><%= cl_image_tag(comment.user.avatar, class: "avatar-small creator") %></div>
+                        <div class="comment-infos-element"><%= comment.date %></div>
+                      </div>
+                      <div class="comment-content"><%= comment.content %></div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+
+              <div class="comment-add">
+                <%= simple_form_for [@picture, @comment] do |f| %>
+                  <%= f.input :content, label:"...", placeholder: "Add your comment..." %>
+                  <%= f.submit "Add", class: "btn btn-secondary" %>
+                <% end %>
+              </div>
+            </div>
+
 </div>
