@@ -1,0 +1,66 @@
+
+// navigation
+.navbar-wagon {
+  background-color: transparent;
+}
+.navbar-wagon-link {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+}
+
+.background_black {
+  background: black;
+}
+
+.comment-content {
+  color: white;
+}
+.comment-infos-element {
+  color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.nav-item.original-picture {
+  flex: grow;
+}
+
+a.nav-item.glyphicon{
+  height: 100%;
+  padding: 100px 0;
+  color: white;
+}
+
+
+// vote
+
+.votes {
+  position: relative;
+  height: 20px;
+  font-color: white;
+}
+
+.votes span {
+  color: white;
+}
+.btn-success {
+  border-radius: 20px;
+  margin-bottom: 5px;
+  bottom: 0px;
+  right: 10px;
+  position: absolute;
+}
+// upvote
+.fa-thumbs-up {
+  color: white;
+  margin-right: 10px;
+}
+// downvote
+.fa-thumbs-down {
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 10px;
+}

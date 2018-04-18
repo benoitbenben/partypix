@@ -5,7 +5,7 @@
     <div class="text-center", style="padding: 6px">
       <br>
       <h2><%= @room.name %> </h2>
-      <h3><%= @room.date %> </h3>
+      <h3><%= @room.date.strftime("%d %b %Y") %></h3>
     </div>
 
     <div class="contributors-container text-center">
@@ -26,7 +26,10 @@
       <div class="top10-card">
         <%= link_to picture_path(picture) do %>
           <%= cl_image_tag picture.photo, class: "card" %>
-          <span class="top10-card-votes badge"><%= picture.upvotes.count %></span>
+            <div class="votes-container">
+              <span class="votes-item-icon fas fa-star"></span>
+              <span class="votes-item"><%= picture.upvotes.count %></span>
+            </div>
         <% end %>
       </div>
     <% end %>
