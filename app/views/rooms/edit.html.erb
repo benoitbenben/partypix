@@ -1,8 +1,11 @@
-<h2>UPDATE YOUR ROOM !</h2>
+<div class="text-center">
+  <br>
+  <h2>UPDATE YOUR ROOM !</h2>
+  <br>
 
-
-  <%= simple_form_for (@room) do |f| %>
-    <%= f.input :name %>
-    <%= f.input :date %>
-    <%= f.submit "Update", class: "btn btn-primary" %>
-  <% end %>
+    <%= simple_form_for (@room) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :date %>
+      <%= f.submit "Update", class: "btn btn-major" %>
+    <% end %>
+</div>
