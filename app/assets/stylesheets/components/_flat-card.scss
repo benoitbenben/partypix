@@ -49,7 +49,6 @@
 .flat-card .description .date {
   font: $body-font;
   font-size: 18px;
-  margin-left: 5px;
 }
 
 .flat-card .description .data-container {
@@ -63,9 +62,9 @@
     color: $dark-gray;
 }
 
-.flat-card .description .data-container .data-element i {
+.flat-card .description .data-container .data-element svg {
   color: $light-gray;
-
+  opacity: 0,8;
 }
 
 .flat-card .link {
