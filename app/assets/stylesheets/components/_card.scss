@@ -22,14 +22,35 @@
   position: relative;
 }
 
-.top10-card-votes {
+.votes-container {
   position: absolute;
-  top: 10px;
-  left: 7px;
-  font-weight: bold;
-  color: $blue;
-  border-radius: 0%;
-  background-color: $light-gray;
-  background-size: 10 10 10 10;
-  border-radius: 5px;
+  z-index: 1;
+  top: 7px;
+  left: 10px;
+  background-color: rgba(white, 0.8);
+  display: flex;
+  color: $light-gray;
+  border-radius: 1px;
 }
+
+.votes-item {
+  margin: 1px;
+  font-weight: bold;
+  border-radius: 0%;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+.votes-item-icon {
+  margin: 2px;
+  border-radius: 0%;
+  border-radius: 5px;
+  font-size: 10px;
+}
+
+// .votes-item-icon {
+//     width: 0;
+//     height: 0;
+//     border-top: 60px solid rgba(yellow, 0.7);
+//     border-right: 60px solid transparent;
+// }
