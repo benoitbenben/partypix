@@ -14,6 +14,8 @@ class RoomsController < ApplicationController
     @pictures = @room.pictures
 
     top10_pictures
+
+    all_pictures_except_top10
   end
 
   def new
@@ -58,6 +60,10 @@ class RoomsController < ApplicationController
 
   def top10_pictures
     @top10_pictures = @pictures.top_10.select { |picture| picture.upvotes_count > 0 }
+  end
+
+  def all_pictures_except_top10
+    @all_other_pictures = @room.pictures - @top10_pictures
   end
 
 end
