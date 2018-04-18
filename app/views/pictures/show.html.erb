@@ -5,6 +5,12 @@
 
 <!-- btn prev next -->
 
+        <div class="back-page">
+          <%= link_to room_path(@room) do %>
+            <i class="fas fa-arrow-left"></i>
+          <% end %>
+        </div>
+
         <div class="wrapper">
           <%= link_to "", prev_room_picture_path(@room, @picture), class:"nav-item glyphicon glyphicon-chevron-left" %>
           <%= cl_image_tag(@picture.photo, class: "nav-item original-picture") %>
@@ -77,5 +83,14 @@
                 <% end %>
               </div>
             </div>
+          </div>
+        <% end %>
+
+      <% end %>
+
+      <%= simple_form_for [@picture, @comment] do |f| %>
+        <%= f.input :content, label:"...", placeholder: "Add your comment..." %>
+        <%= f.submit "Add", class: "btn btn-secondary" %>
+      <% end %>
 
 </div>

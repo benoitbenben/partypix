@@ -72,7 +72,17 @@ a.nav-item.glyphicon{
   margin-right: 10px;
 }
 
-// commentaires
+
+// Go back to the room
+.back-page a {
+  color: $light-gray;
+  font-size: 24px;
+}
+
+.back-page a:hover {
+  color: $blue;
+
+  // commentaires
 .comment-content {
   margin-top: 5px;
   color: black;
