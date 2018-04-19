@@ -61,13 +61,13 @@ a.nav-item.glyphicon{
   position: absolute;
 }
 // upvote
-.fa-thumbs-up {
+.voted {
   color: white;
   margin-right: 10px;
 }
 // downvote
-.fa-thumbs-down {
-  color: rgba(255, 255, 255, 0.8);
+.unvoted {
+  color: rgba(255, 255, 255, 0.3);
   margin-right: 10px;
 }
 
