@@ -11,13 +11,14 @@
   z-index: 1;
   font: $body-font;
   color: $dark-gray;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 24px;
   font-style: normal;
   line-height: 1;
-  text-shadow: 3px 2px 0px rgba(242, 242, 242, 0.7);
+  text-shadow: 3px 3px 0px rgba($pink, 1);
   text-transform: uppercase;
   display: block;
+  letter-spacing: 2px;
 }
 
 .flat-card .picture {
@@ -25,12 +26,13 @@
   top: 5px;
   right: 5px;
   box-shadow: 2px 2px 0px rgba(119, 97, 97, 0.3);
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 .flat-card .picture img {
   width: 200px;
-  border-radius: 5px;
+  border-radius: 0px;
+  box-shadow: 7px 7px 0px rgba(white, 0.8);
 }
 
 .flat-card .picture-default {
@@ -48,15 +50,16 @@
 
 .flat-card .description .date {
   font: $body-font;
+  font-weight: lighter;
   font-size: 18px;
   margin-left: 0px;
   margin-top: 10px;
-  color: $light-gray;
+  color: white;
   font-size: 12pt;
 }
 
 .flat-card .description .data-container {
-  margin-top: 5px;
+  margin-top: 4px;
   margin-left: -5px;
   width: 100px;
   display: flex;
@@ -68,13 +71,15 @@
 }
 
 .flat-card .description .data-container .data-element-icon {
-  color: $light-gray;
+  color: rgba(white, 0.6);
 }
 
 .flat-card .description .data-container .data-element-number {
   color: $dark-gray;
   font-size: 12pt;
+  font-weight: bolder;
   padding-left: 5px;
+  text-shadow: 2px 2px 0px rgba($pink, 1);
 }
 
 .flat-card .link {
