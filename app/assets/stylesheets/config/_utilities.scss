@@ -20,14 +20,14 @@ h2 {
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
-  text-shadow: 2px 2px 0px rgba(242, 242, 242, 0.7);
+  text-shadow: 3px 3px 0px rgba($pink, 1);
   font-style: normal;
   text-transform: uppercase;
   word-wrap: break-word;
 }
 
 h3 {
-  color: $light-gray;
+  color: white;
   font-size: 4vw;
   display: block;
   margin-top: 5px;
