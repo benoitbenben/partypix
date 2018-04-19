@@ -28,13 +28,13 @@
               <div class="votes">
                 <% if @picture.upvotes.find_by(user: current_user).nil? %>
                   <%= link_to picture_upvote_path(@picture), method: :post , class: "text-center" do %>
-                    <i class="fa fa-thumbs-up"></i>
+                    <i class="voted fa fa-thumbs-up"></i>
                   <% end %>
                   <p><%= @upvotes.count %></p>
 
                 <% else @picture.upvotes.find_by(user: current_user) %>
                   <%= link_to picture_upvote_path(@picture), method: :delete do %>
-                    <i class="fa fa-thumbs-down"></i>
+                    <i class="unvoted fa fa-thumbs-up"></i>
                   <% end %>
                   <p><%= @upvotes.count %></p>
                 <% end %>
@@ -69,10 +69,15 @@
         <div class="comment">
           <div class=<%= comment.user == current_user ? "comment-display-right" : "comment-display-left" %> >
               <div class="comment-infos">
-                <div class="comment-infos-element"><%= cl_image_tag(comment.user.avatar, class: "avatar-small creator") %></div>
-               <!-- <div class="comment-infos-element"><%= comment.date %></div>-->
+                <div class="comment-infos-element"><%= cl_image_tag(comment.user.avatar, class: "avatar-small creator") %>
+                  <div class="text-center">  <%= comment.user.nickname %></div>
+                </div>
+
               </div>
-              <div class="comment-content"><%= comment.content %></div>
+              <div class="comment-content"><%= comment.content %>
+                <div class="comment-infos-element">- <%= comment.date.strftime("%d %b %Y") %> -</div>
+
+              </div>
           </div>
         </div>
       <% end %>
