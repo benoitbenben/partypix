@@ -5,6 +5,9 @@
   position: fixed;
   bottom: 0;
   z-index: 100;
+  &:hover {
+    background-color: rgba(white, 0.8);
+  }
 }
 
 .bottom-menu-element {
@@ -27,7 +30,7 @@
 }
 
 .bottom-menu-element:hover {
-  color: yellow;
+  color: $pink;
   opacity: 1;
   text-decoration: none;
 }
